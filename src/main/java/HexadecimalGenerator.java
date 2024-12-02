@@ -30,6 +30,14 @@ public class HexadecimalGenerator {
     }
 	
 	
+	
+	 /**
+     * Hashes a given string using SHA-256 and returns the hexadecimal representation.
+     *
+     * @param input The string to hash.
+     * @return The hashed hexadecimal string.
+     */
+	
 	public static String hashString(String input) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
