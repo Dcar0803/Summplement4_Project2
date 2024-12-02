@@ -2,6 +2,14 @@ import java.util.Random;
 
 public class HexadecimalGenerator {
 	
+	/**
+     * Generates a random 32-character hexadecimal string formatted as
+     * xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.
+     *
+     * @return A formatted hexadecimal string.
+     */
+	
+	
 	public static String generateHexadecimal() {
         Random random = new Random();
         StringBuilder hexBuilder = new StringBuilder();
