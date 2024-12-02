@@ -1,4 +1,6 @@
 import java.util.Random;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class HexadecimalGenerator {
 	
@@ -26,4 +28,23 @@ public class HexadecimalGenerator {
                hexBuilder.substring(16, 20) + "-" +
                hexBuilder.substring(20);
     }
+	
+	
+	public static String hashString(String input) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hashBytes = digest.digest(input.getBytes());
+            StringBuilder hexBuilder = new StringBuilder();
+
+            for (byte b : hashBytes) {
+                hexBuilder.append(String.format("%02x", b));
+            }
+
+            return hexBuilder.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error: SHA-256 algorithm not found", e);
+        }
+    }
+	
+	
 }//end of class 
